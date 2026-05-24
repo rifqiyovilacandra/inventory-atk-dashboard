@@ -23,20 +23,7 @@ def set_page_style():
         padding-bottom: 2rem;
         max-width: 1480px;
     }}
-    [data-testid="stHeader"] {{
-        height: 0px !important;
-        min-height: 0px !important;
-        overflow: visible !important;
-        background: transparent !important;
-        border-bottom: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-    }}
-    [data-testid="stToolbar"],
-    [data-testid="stStatusWidget"],
-    [data-testid="stDecoration"],
-    [data-testid="stToolbarActions"],
-    [data-testid="stHeader"] > div:first-child {{ display: none !important; }}
+    [data-testid="stHeader"] {{ display: none; }}
     h1,h2,h3,h4,h5,h6 {{ color: {p['bg_dark']} !important; letter-spacing: 0; }}
     p, span, label, div {{ letter-spacing: 0; }}
 
@@ -246,50 +233,33 @@ def set_page_style():
     @keyframes spin {{
         to {{ transform: rotate(360deg); }}
     }}
-    /* ── Collapsible Sidebar Toggle ── */
-    [data-testid="stSidebarCollapseButton"],
+    /* ── Sidebar collapse button (inside sidebar) ── */
+    [data-testid="stSidebarCollapseButton"] button,
     button[data-testid="stBaseButton-headerNoPadding"] {{
         background: rgba(255,255,255,0.14) !important;
         border: 1px solid rgba(255,255,255,0.28) !important;
         border-radius: 8px !important;
-        padding: 5px !important;
-        transition: background 0.2s, transform 0.2s;
         color: white !important;
     }}
-    [data-testid="stSidebarCollapseButton"]:hover,
+    [data-testid="stSidebarCollapseButton"] button:hover,
     button[data-testid="stBaseButton-headerNoPadding"]:hover {{
         background: rgba(255,255,255,0.28) !important;
-        transform: scale(1.08);
     }}
     [data-testid="stSidebarCollapseButton"] svg,
     button[data-testid="stBaseButton-headerNoPadding"] svg {{
         fill: white !important;
-        width: 18px !important;
-        height: 18px !important;
     }}
+    /* ── Expand button (shown when sidebar is closed) ── */
     [data-testid="collapsedControl"] {{
-        position: fixed !important;
-        left: 0 !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        z-index: 9999 !important;
         background-color: {p['bg_dark']} !important;
-        border-radius: 0 10px 10px 0 !important;
-        box-shadow: 3px 0 14px rgba(0,0,0,0.22) !important;
-        padding: 10px 7px !important;
-        transition: background 0.2s;
-        cursor: pointer !important;
+        border-radius: 0 8px 8px 0 !important;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.18) !important;
     }}
     [data-testid="collapsedControl"]:hover {{
         background-color: {p['bg']} !important;
     }}
     [data-testid="collapsedControl"] svg {{
         fill: white !important;
-        width: 18px !important;
-        height: 18px !important;
-    }}
-    [data-testid="stSidebar"] {{
-        transition: width 0.3s ease !important;
     }}
     .login-wrap {{
         min-height: 100vh;
