@@ -23,11 +23,7 @@ def set_page_style():
         padding-bottom: 2rem;
         max-width: 1480px;
     }}
-    [data-testid="stHeader"] {{
-        background: rgba(245,247,250,0.92) !important;
-        backdrop-filter: blur(8px);
-        box-shadow: none !important;
-    }}
+    [data-testid="stHeader"] {{ display: none !important; }}
     h1,h2,h3,h4,h5,h6 {{ color: {p['bg_dark']} !important; letter-spacing: 0; }}
     p, span, label, div {{ letter-spacing: 0; }}
 
@@ -254,15 +250,20 @@ def set_page_style():
         fill: white !important;
     }}
     /* ── Expand button (shown when sidebar is closed) ── */
-    [data-testid="collapsedControl"] {{
+    [data-testid="collapsedControl"],
+    [data-testid="collapsedControl"] > div,
+    [data-testid="collapsedControl"] button {{
         background-color: {p['bg_dark']} !important;
         border-radius: 0 8px 8px 0 !important;
-        box-shadow: 2px 0 8px rgba(0,0,0,0.18) !important;
+        border: none !important;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.20) !important;
     }}
-    [data-testid="collapsedControl"]:hover {{
+    [data-testid="collapsedControl"]:hover,
+    [data-testid="collapsedControl"] button:hover {{
         background-color: {p['bg']} !important;
     }}
-    [data-testid="collapsedControl"] svg {{
+    [data-testid="collapsedControl"] svg,
+    [data-testid="collapsedControl"] * svg {{
         fill: white !important;
     }}
     .login-wrap {{
