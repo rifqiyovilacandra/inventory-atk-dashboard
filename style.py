@@ -23,7 +23,20 @@ def set_page_style():
         padding-bottom: 2rem;
         max-width: 1480px;
     }}
-    [data-testid="stHeader"] {{ display: none; }}
+    [data-testid="stHeader"] {{
+        height: 0px !important;
+        min-height: 0px !important;
+        overflow: visible !important;
+        background: transparent !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }}
+    [data-testid="stToolbar"],
+    [data-testid="stStatusWidget"],
+    [data-testid="stDecoration"],
+    [data-testid="stToolbarActions"],
+    [data-testid="stHeader"] > div:first-child {{ display: none !important; }}
     h1,h2,h3,h4,h5,h6 {{ color: {p['bg_dark']} !important; letter-spacing: 0; }}
     p, span, label, div {{ letter-spacing: 0; }}
 
@@ -255,13 +268,17 @@ def set_page_style():
         height: 18px !important;
     }}
     [data-testid="collapsedControl"] {{
+        position: fixed !important;
+        left: 0 !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 9999 !important;
         background-color: {p['bg_dark']} !important;
         border-radius: 0 10px 10px 0 !important;
         box-shadow: 3px 0 14px rgba(0,0,0,0.22) !important;
         padding: 10px 7px !important;
         transition: background 0.2s;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
+        cursor: pointer !important;
     }}
     [data-testid="collapsedControl"]:hover {{
         background-color: {p['bg']} !important;

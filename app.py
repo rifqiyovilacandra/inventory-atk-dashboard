@@ -20,14 +20,6 @@ set_page_style()
 if not require_login():
     st.stop()
 
-# Paksa sidebar tampil setelah login
-st.markdown("""
-<style>
-[data-testid="stSidebar"]       { display: flex !important; }
-[data-testid="stSidebar"] > div { display: flex !important; flex-direction: column; }
-</style>
-""", unsafe_allow_html=True)
-
 # Sidebar logo
 if os.path.exists(LOGO_PATH):
     with open(LOGO_PATH, 'rb') as _lf:
