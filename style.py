@@ -233,11 +233,46 @@ def set_page_style():
     @keyframes spin {{
         to {{ transform: rotate(360deg); }}
     }}
-    [data-testid="collapsedControl"]      {{ display: none !important; }}
+    /* ── Collapsible Sidebar Toggle ── */
     [data-testid="stSidebarCollapseButton"],
-    [data-testid="stSidebar"] button[kind="header"],
     button[data-testid="stBaseButton-headerNoPadding"] {{
-        display: none !important;
+        background: rgba(255,255,255,0.14) !important;
+        border: 1px solid rgba(255,255,255,0.28) !important;
+        border-radius: 8px !important;
+        padding: 5px !important;
+        transition: background 0.2s, transform 0.2s;
+        color: white !important;
+    }}
+    [data-testid="stSidebarCollapseButton"]:hover,
+    button[data-testid="stBaseButton-headerNoPadding"]:hover {{
+        background: rgba(255,255,255,0.28) !important;
+        transform: scale(1.08);
+    }}
+    [data-testid="stSidebarCollapseButton"] svg,
+    button[data-testid="stBaseButton-headerNoPadding"] svg {{
+        fill: white !important;
+        width: 18px !important;
+        height: 18px !important;
+    }}
+    [data-testid="collapsedControl"] {{
+        background-color: {p['bg_dark']} !important;
+        border-radius: 0 10px 10px 0 !important;
+        box-shadow: 3px 0 14px rgba(0,0,0,0.22) !important;
+        padding: 10px 7px !important;
+        transition: background 0.2s;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+    }}
+    [data-testid="collapsedControl"]:hover {{
+        background-color: {p['bg']} !important;
+    }}
+    [data-testid="collapsedControl"] svg {{
+        fill: white !important;
+        width: 18px !important;
+        height: 18px !important;
+    }}
+    [data-testid="stSidebar"] {{
+        transition: width 0.3s ease !important;
     }}
     .login-wrap {{
         min-height: 100vh;
