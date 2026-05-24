@@ -23,15 +23,7 @@ def set_page_style():
         padding-bottom: 2rem;
         max-width: 1480px;
     }}
-    [data-testid="stHeader"] {{
-        background: transparent !important;
-        box-shadow: none !important;
-        height: 0 !important;
-    }}
-    [data-testid="stHeader"]::before,
-    [data-testid="stHeader"]::after {{
-        background: transparent !important;
-    }}
+    [data-testid="stHeader"] {{ display: none !important; }}
     h1,h2,h3,h4,h5,h6 {{ color: {p['bg_dark']} !important; letter-spacing: 0; }}
     p, span, label, div {{ letter-spacing: 0; }}
 
@@ -241,42 +233,11 @@ def set_page_style():
     @keyframes spin {{
         to {{ transform: rotate(360deg); }}
     }}
-    /* ── Sidebar collapse button (inside sidebar) ── */
-    [data-testid="stSidebarCollapseButton"] button,
+    [data-testid="collapsedControl"] {{ display: none !important; }}
+    [data-testid="stSidebarCollapseButton"],
+    [data-testid="stSidebar"] button[kind="header"],
     button[data-testid="stBaseButton-headerNoPadding"] {{
-        background: {p['bg_dark']} !important;
-        border: 1px solid {p['bg']} !important;
-        border-radius: 8px !important;
-        color: white !important;
-        box-shadow: 0 2px 8px rgba(13,71,161,0.24) !important;
-    }}
-    [data-testid="stSidebarCollapseButton"] button:hover,
-    button[data-testid="stBaseButton-headerNoPadding"]:hover {{
-        background: {p['bg']} !important;
-    }}
-    [data-testid="stSidebarCollapseButton"] svg,
-    button[data-testid="stBaseButton-headerNoPadding"] svg,
-    [data-testid="stSidebarCollapseButton"] button *,
-    button[data-testid="stBaseButton-headerNoPadding"] * {{
-        fill: white !important;
-        color: white !important;
-    }}
-    /* ── Expand button (shown when sidebar is closed) ── */
-    [data-testid="collapsedControl"],
-    [data-testid="collapsedControl"] > div,
-    [data-testid="collapsedControl"] button {{
-        background-color: {p['bg_dark']} !important;
-        border-radius: 0 8px 8px 0 !important;
-        border: none !important;
-        box-shadow: 2px 0 8px rgba(0,0,0,0.20) !important;
-    }}
-    [data-testid="collapsedControl"]:hover,
-    [data-testid="collapsedControl"] button:hover {{
-        background-color: {p['bg']} !important;
-    }}
-    [data-testid="collapsedControl"] svg,
-    [data-testid="collapsedControl"] * svg {{
-        fill: white !important;
+        display: none !important;
     }}
     .login-wrap {{
         min-height: 100vh;
