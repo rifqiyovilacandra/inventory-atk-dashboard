@@ -23,7 +23,15 @@ def set_page_style():
         padding-bottom: 2rem;
         max-width: 1480px;
     }}
-    [data-testid="stHeader"] {{ display: none !important; }}
+    [data-testid="stHeader"] {{
+        background: transparent !important;
+        box-shadow: none !important;
+        height: 0 !important;
+    }}
+    [data-testid="stHeader"]::before,
+    [data-testid="stHeader"]::after {{
+        background: transparent !important;
+    }}
     h1,h2,h3,h4,h5,h6 {{ color: {p['bg_dark']} !important; letter-spacing: 0; }}
     p, span, label, div {{ letter-spacing: 0; }}
 
@@ -236,18 +244,22 @@ def set_page_style():
     /* ── Sidebar collapse button (inside sidebar) ── */
     [data-testid="stSidebarCollapseButton"] button,
     button[data-testid="stBaseButton-headerNoPadding"] {{
-        background: rgba(255,255,255,0.14) !important;
-        border: 1px solid rgba(255,255,255,0.28) !important;
+        background: {p['bg_dark']} !important;
+        border: 1px solid {p['bg']} !important;
         border-radius: 8px !important;
         color: white !important;
+        box-shadow: 0 2px 8px rgba(13,71,161,0.24) !important;
     }}
     [data-testid="stSidebarCollapseButton"] button:hover,
     button[data-testid="stBaseButton-headerNoPadding"]:hover {{
-        background: rgba(255,255,255,0.28) !important;
+        background: {p['bg']} !important;
     }}
     [data-testid="stSidebarCollapseButton"] svg,
-    button[data-testid="stBaseButton-headerNoPadding"] svg {{
+    button[data-testid="stBaseButton-headerNoPadding"] svg,
+    [data-testid="stSidebarCollapseButton"] button *,
+    button[data-testid="stBaseButton-headerNoPadding"] * {{
         fill: white !important;
+        color: white !important;
     }}
     /* ── Expand button (shown when sidebar is closed) ── */
     [data-testid="collapsedControl"],
