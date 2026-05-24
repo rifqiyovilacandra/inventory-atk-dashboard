@@ -23,7 +23,11 @@ def set_page_style():
         padding-bottom: 2rem;
         max-width: 1480px;
     }}
-    [data-testid="stHeader"] {{ display: none; }}
+    [data-testid="stHeader"] {{
+        background: rgba(245,247,250,0.92) !important;
+        backdrop-filter: blur(8px);
+        box-shadow: none !important;
+    }}
     h1,h2,h3,h4,h5,h6 {{ color: {p['bg_dark']} !important; letter-spacing: 0; }}
     p, span, label, div {{ letter-spacing: 0; }}
 
