@@ -1,0 +1,24 @@
+# Claude Code — konfigurasi AI developer tool, tidak dibutuhkan user lain
+.claude/
+
+# Konfigurasi admin yang dibuat saat runtime (berisi password hash)
+admin_config.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Streamlit cache
+.streamlit/
+
+# OS files
+.DS_Store
+Thumbs.db
